@@ -1,0 +1,83 @@
+/* Screen transitions */
+.screen.slide-in-right {
+  display: block;
+  animation: slideInRight 300ms ease-out forwards;
+}
+
+.screen.slide-out-left {
+  display: block;
+  animation: slideOutLeft 300ms ease-out forwards;
+}
+
+.screen.slide-in-left {
+  display: block;
+  animation: slideInLeft 300ms ease-out forwards;
+}
+
+.screen.slide-out-right {
+  display: block;
+  animation: slideOutRight 300ms ease-out forwards;
+}
+
+.screen.fade-in {
+  display: block;
+  animation: fadeIn 200ms ease-out forwards;
+}
+
+.screen.fade-out {
+  display: block;
+  animation: fadeOut 200ms ease-out forwards;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0.8; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutLeft {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(-30%); opacity: 0; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0.8; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutRight {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(30%); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  bottom: calc(var(--nav-height) + 24px);
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--color-forest);
+  color: white;
+  padding: 12px 24px;
+  border-radius: var(--radius-chip);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  z-index: 1000;
+  opacity: 0;
+  transition: all 300ms ease-out;
+  pointer-events: none;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
